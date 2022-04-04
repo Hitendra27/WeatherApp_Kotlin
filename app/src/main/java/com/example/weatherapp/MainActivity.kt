@@ -1,5 +1,6 @@
 package com.example.weatherapp
 
+import ForecastListAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,11 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val forecastList = findViewById<RecyclerView>(R.id.forecast_list)
-        //forecastList.layoutManager = LinearLayoutManager(this)
-        //forecastList.adapter = ForecastListAdapter(items)
-
-        val forecastList = findViewById(R.id.forecast_list) as RecyclerView
+        val forecastList = findViewById<RecyclerView>(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
+        forecastList.adapter = ForecastListAdapter(items)
     }
 }
